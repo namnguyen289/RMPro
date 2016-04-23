@@ -3,7 +3,7 @@ import {App, IonicApp, Platform, MenuController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
-
+import {IntroPage} from './pages/intro/intro';
 
 @App({
   templateUrl: 'build/app.html',
@@ -24,11 +24,12 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage },
+      { title: 'Intro', component: IntroPage }
     ];
 
     // make HelloIonicPage the root (or first) page
-    this.rootPage = HelloIonicPage;
+    this.rootPage = IntroPage;
   }
 
   initializeApp() {
