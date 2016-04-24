@@ -1,0 +1,20 @@
+@mixin border-radius($radius) {
+  	-webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin background-size($size){
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+	background-size: $size;
+}
+
+@mixin background-cover($size: cover, $opacity: 0.7, $mode:color){
+	@include background-size($size);
+    background-color: rgba(0,0,0,$opacity);
+    background-blend-mode:$mode;
+    background-repeat:no-repeat;
+}

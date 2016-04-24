@@ -1,0 +1,43 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>{{title}}</ion-title>
+   <ion-buttons end>
+    <button>
+      Ordered: {{userData._orders.length}}
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content>
+  <ion-list class="foo"  no-lines>
+    <ion-item-sliding *ngFor="#food of foods">
+      <ion-item (click)="itemTapped($event, food)" >
+        <ion-thumbnail item-left>
+          <img src="{{food.prd_img}}">
+        </ion-thumbnail>
+        <h2>{{food.prd_nm}}</h2>
+        <P class="description">
+          {{food.prd_dsc}}
+        </P>
+        <p class="price">{{food.prd_cur + "" + food.prd_prc}}</p>
+      </ion-item>
+      <ion-item-options>
+        <button primary (click)="placeOrder($event,food)">
+          Order
+        </button>
+        <button danger (click)="removeOrder($event,food)">
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <!-- <button ion-item *ngFor="#food of foods" (click)="itemTapped($event, food)" (on-swipe-right)="swipeToOrder($event,food)" style="background-image: url('{{food.prd_img}}')">
+      <h2>{{food.prd_nm}}</h2>
+      <P class="description">
+        {{food.prd_dsc}}
+      </P>
+      <p class="price">{{food.prd_cur + "" + food.prd_prc}}</p>
+    </button> -->
+  </ion-list>
+</ion-content>

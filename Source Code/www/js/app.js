@@ -23,7 +23,7 @@ angular.module('hoss_app', ['ionic', 'hoss_app.controllers'])
 
             .state('intro', {
                 url: "/intro",
-                templateUrl: "templates/intro.html",
+                templateUrl: "templates/app/restaurant/product.html",
                 controller: 'IntroCtrl'
             })
 

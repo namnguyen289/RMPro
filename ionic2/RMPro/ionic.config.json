@@ -1,5 +1,11 @@
 {
   "name": "RMPro",
   "app_id": "",
-  "v2": true
+  "v2": true,
+  "proxies": [
+    {
+      "path": "/data",
+      "proxyUrl": "http://localhost:8081/"
+    }
+  ]
 }

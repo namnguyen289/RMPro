@@ -12,11 +12,13 @@
         </ion-buttons>
       </ion-toolbar> -->
       <!-- <img [src]="slide.image" class="slide-image"/> -->
-      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
-      <p class="description" [innerHTML]="slide.description"></p>
-      <p class="continue" *ngIf="slide.lastFlg">
-          <button large clear (click)="shownIntro($event)">
-            Continue
+      <h2 class="slide-title center">{{slide.title}}
+        <p class="description" [innerHTML]="slide.description"></p>
+      </h2>
+      
+      <p class="continue" *ngIf="slide == slides[slides.length-1]">
+          <button round large outline light (click)="shownIntro($event)">
+            GET STARTED
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
       </p>

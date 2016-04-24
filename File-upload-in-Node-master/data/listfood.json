@@ -1,0 +1,134 @@
+{
+  "data":[
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productbeefsteak",
+		"prd_nm":"beefsteak",
+		"prd_dsc":"sliced beef tenderloin is served to diners as all-you-can-eat finger food",
+		"prd_img":"/data/img/94893552491t.jpg-1461440602582.jpg",
+		"prd_prc":"12",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productfarmfreshegg",
+		"prd_nm":"Farm-Fresh Egg Breakfast",
+		"prd_dsc":"One egg cooked-to-order, your choice of Bob Evans Sausage® or bacon and two biscuits.",
+		"prd_img":"/data/img/FY16_SP_valuebreakfast.jpg-1461444200182.jpg",
+		"prd_prc":"10",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productsunrise",
+		"prd_nm":"Sunrise",
+		"prd_dsc":"Two eggs cooked-to-order, served with your choice of a farmhouse side and freshly baked bread.",
+		"prd_img":"/data/img/Sunrise_reg.jpg-1461444318853.jpg",
+		"prd_prc":"11",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productfarmfreshegg",
+		"prd_nm":"Farm-Fresh Egg Breakfast",
+		"prd_dsc":"One egg cooked-to-order, your choice of Bob Evans Sausage® or bacon and two biscuits.",
+		"prd_img":"/data/img/FY16_SP_valuebreakfast.jpg-1461444200182.jpg",
+		"prd_prc":"10",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productsunrise",
+		"prd_nm":"Sunrise",
+		"prd_dsc":"Two eggs cooked-to-order, served with your choice of a farmhouse side and freshly baked bread.",
+		"prd_img":"/data/img/Sunrise_reg.jpg-1461444318853.jpg",
+		"prd_prc":"11",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productfarmfreshegg",
+		"prd_nm":"Farm-Fresh Egg Breakfast",
+		"prd_dsc":"One egg cooked-to-order, your choice of Bob Evans Sausage® or bacon and two biscuits.",
+		"prd_img":"/data/img/FY16_SP_valuebreakfast.jpg-1461444200182.jpg",
+		"prd_prc":"10",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productsunrise",
+		"prd_nm":"Sunrise",
+		"prd_dsc":"Two eggs cooked-to-order, served with your choice of a farmhouse side and freshly baked bread.",
+		"prd_img":"/data/img/Sunrise_reg.jpg-1461444318853.jpg",
+		"prd_prc":"11",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productfarmfreshegg",
+		"prd_nm":"Farm-Fresh Egg Breakfast",
+		"prd_dsc":"One egg cooked-to-order, your choice of Bob Evans Sausage® or bacon and two biscuits.",
+		"prd_img":"/data/img/FY16_SP_valuebreakfast.jpg-1461444200182.jpg",
+		"prd_prc":"10",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productsunrise",
+		"prd_nm":"Sunrise",
+		"prd_dsc":"Two eggs cooked-to-order, served with your choice of a farmhouse side and freshly baked bread.",
+		"prd_img":"/data/img/Sunrise_reg.jpg-1461444318853.jpg",
+		"prd_prc":"11",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productfarmfreshegg",
+		"prd_nm":"Farm-Fresh Egg Breakfast",
+		"prd_dsc":"One egg cooked-to-order, your choice of Bob Evans Sausage® or bacon and two biscuits.",
+		"prd_img":"/data/img/FY16_SP_valuebreakfast.jpg-1461444200182.jpg",
+		"prd_prc":"10",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productsunrise",
+		"prd_nm":"Sunrise",
+		"prd_dsc":"Two eggs cooked-to-order, served with your choice of a farmhouse side and freshly baked bread.",
+		"prd_img":"/data/img/Sunrise_reg.jpg-1461444318853.jpg",
+		"prd_prc":"11",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productfarmfreshegg",
+		"prd_nm":"Farm-Fresh Egg Breakfast",
+		"prd_dsc":"One egg cooked-to-order, your choice of Bob Evans Sausage® or bacon and two biscuits.",
+		"prd_img":"/data/img/FY16_SP_valuebreakfast.jpg-1461444200182.jpg",
+		"prd_prc":"10",
+		"prd_cur":"$"
+	},
+	{
+		"res_id":"FIRST_RES",
+		"mn_id":"menubreakfast",		
+		"prd_id":"productsunrise",
+		"prd_nm":"Sunrise",
+		"prd_dsc":"Two eggs cooked-to-order, served with your choice of a farmhouse side and freshly baked bread.",
+		"prd_img":"/data/img/Sunrise_reg.jpg-1461444318853.jpg",
+		"prd_prc":"11",
+		"prd_cur":"$"
+	}
+  ]
+}

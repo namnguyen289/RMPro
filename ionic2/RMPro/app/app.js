@@ -2,29 +2,31 @@ import 'es6-shim';
 import {App, IonicApp, Platform, MenuController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-import {ListPage} from './pages/list/list';
+import {MenuPage} from './pages/list-menu/list-menu';
 import {IntroPage} from './pages/intro/intro';
+import {UserData} from './providers/user-data';
 
 @App({
   templateUrl: 'build/app.html',
+  providers: [UserData],
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
   static get parameters() {
-    return [[IonicApp], [Platform], [MenuController]];
+    return [[IonicApp], [Platform], [MenuController], [UserData]];
   }
 
-  constructor(app, platform, menu) {
+  constructor(app, platform, menu,userData) {
     // set up our app
     this.app = app;
     this.platform = platform;
     this.menu = menu;
+    this.userData = userData;
     this.initializeApp();
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
+      { title: 'Menu', component: MenuPage },
       { title: 'Intro', component: IntroPage }
     ];
 

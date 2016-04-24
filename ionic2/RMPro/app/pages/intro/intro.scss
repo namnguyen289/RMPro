@@ -12,16 +12,13 @@
     }
   }
   ion-slide{
-    background-repeat:no-repeat;
-    background-size: cover;
+    @include background-cover(cover);
   }
   .slide-zoom {
     height: 100%;
   }
 
   .slide-title {
-    position: absolute;
-    top: 30%;
     display: block;
     text-align: center;
     width: 100%;
@@ -29,31 +26,33 @@
     font-style: italic;
     color: #fff;
     font-size: 7.9vw;
-    background-color: black;
-    opacity: 0.75;
     padding: 4vw 1vw;
   }
-
-  .slide-image {
-    min-width:200%;
-    min-height: 100%;
-  }
-
+.center {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute !important;
+    margin:0 auto;
+    width:100%;
+}
   b {
     font-weight: 500;
   }
 
   .description {
-    padding: 0 40px;
-    font-size: 5.9vw;
+    padding: 10px 40px;
+    font-size: 4.9vw;
     line-height: 1.5;
-    color: #000;
-    position: absolute;
-    top: 50%;
-    background-color: whitesmoke;
-    opacity: 0.75;
+    color: #fff;
+    // position: absolute;
+    // top: 50%;
     width: 100%;
     display: block;
+    font-weight: initial;
 
     b {
       color: #000000;
@@ -63,5 +62,6 @@
     position: absolute;
     bottom: 5%;
     font-size: 5.9vw;
+    width: 100%;
   }
 }
