@@ -1,0 +1,20 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>{{title}}</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-list class="menu1" show-reorder="true" >
+    <button ion-item *ngFor="#menuitem of menu" (click)="itemTapped($event, menuitem)" style="background-image: url('{{menuitem.bg_img}}')">
+      <h2>{{menuitem.mn_nm}}</h2>
+      <P>
+        {{menuitem.mn_dsc}}
+      </P>
+      <ion-reorder-button class="ion-navicon"
+                        on-reorder="moveItem(menuitem, $fromIndex, $toIndex)">
+    </ion-reorder-button>
+    </button>
+  </ion-list>
+</ion-content>

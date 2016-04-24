@@ -1,10 +1,10 @@
 import 'es6-shim';
 import {App, IonicApp, Platform, MenuController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
+import {UserData} from './providers/user-data';
 import {MenuPage} from './pages/list-menu/list-menu';
 import {IntroPage} from './pages/intro/intro';
-import {UserData} from './providers/user-data';
+import {MenuManagementPage} from './pages/manage/menu/menu-management';
 
 @App({
   templateUrl: 'build/app.html',
@@ -27,10 +27,10 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Menu', component: MenuPage },
-      { title: 'Intro', component: IntroPage }
+      { title: 'Menu Setting', component: MenuManagementPage }
     ];
 
-    // make HelloIonicPage the root (or first) page
+    // make the root (or first) page
     this.rootPage = IntroPage;
   }
 
