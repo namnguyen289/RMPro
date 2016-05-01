@@ -26,12 +26,13 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
+      {title: 'Intro', component: IntroPage},
       { title: 'Menu', component: MenuPage },
       { title: 'Menu Setting', component: MenuManagementPage }
     ];
 
     // make the root (or first) page
-    this.rootPage = MenuPage;
+    this.rootPage = IntroPage;
   }
 
   initializeApp() {
