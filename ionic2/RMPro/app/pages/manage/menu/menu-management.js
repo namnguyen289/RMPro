@@ -1,4 +1,5 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Page,Modal, NavController, NavParams} from 'ionic-angular';
+// import {OrderPopupPage} from '../../../popup/order/order-popup';
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
@@ -7,12 +8,13 @@ import 'rxjs/add/operator/map';
 })
 export class MenuManagementPage {
   static get parameters() {
-    return [[NavController], [NavParams],[Http]];
+    return [[NavController], [NavParams],[Http],[Modal]];
   }
 
-  constructor(nav, navParams,http) {
+  constructor(nav, navParams,http,modal) {
     this.nav = nav;
     this.http = http;
+    this.modal =modal;
     this.menu = null;
     this.title = 'Menu Setting';
     this.selectedItem = navParams.get('item');
@@ -23,19 +25,35 @@ export class MenuManagementPage {
       this.http.get('/data/menu?res_id=' + 'FIRST_RES').map(res => res.json()).subscribe(data => {
           this.menu = data.data;
       });
+      console.log(this.menu);
     }
   }
 
   itemTapped(event, item) {
-    if(item.sub_mn !== undefined && item.sub_mn.length > 0){
-      this.nav.push(MenuManagementPage, {
+     if(item.sub_mn !== undefined && item.sub_mn.length != 0){
+     this.nav.push(MenuManagementPage, {
        item: item
      });
-    }
+   }
+  }
+  // editMenu(event, item) {
+  //   let orderPopup = Modal.create(OrderPopupPage);
+  //   this.nav.present(orderPopup,{item:item,type:'EDT'});
+  // }
+  // addMenu(event,item) {
+  //   let orderPopup = Modal.create(OrderPopupPage);
+  //   // this.nav.present(orderPopup, {item:item,type:'CUR'});
+  // }
+  // addSubMenu(event, item) {
+  //   let orderPopup = Modal.create(OrderPopupPage);
+  //   this.nav.present(orderPopup,{item:item,type:'SUB'});
+  // }
+  removeMenu(event, item) {
+    
   }
   moveItem(item, fromIndex, toIndex) {
-    //Move the item in the array
-    this.menu.splice(fromIndex, 1);
-    this.menu.splice(toIndex, 0, item);
+    // //Move the item in the array
+    // this.menu.splice(fromIndex, 1);
+    // this.menu.splice(toIndex, 0, item);
   };
 }
