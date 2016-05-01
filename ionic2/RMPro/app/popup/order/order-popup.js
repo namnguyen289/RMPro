@@ -1,26 +1,40 @@
-import {Page, Modal, NavController, ViewController} from 'ionic-angular';
+import {Page, ViewController} from 'ionic-angular';
+import {UserData} from "../../providers/user-data";
+import {Http} from 'angular2/http';
+import 'rxjs/add/operator/map';
 
 @Page({
-	templateUrl: 'Build/popup/order/orderPopup.html',
+	templateUrl: 'Build/popup/order/order-popup.html'
 })
 export class OrderPopupPage {
   static get parameters() {
-    return [[NavController], [NavParams],[Http],[Modal]];
+    return [[ViewController],[Http], [UserData]];
   }
 
-  constructor(nav, navParams,http,modal) {
-    this.nav = nav;
+   constructor(viewCtrl,http,userData) {
+    this.viewCtrl = viewCtrl;
     this.http = http;
-    this.modal =modal;
-    this.title = 'Menu Setting';
-    this.menu = navParams.get('item');
-    if(this.menu){
-      this.title = this.selectedItem.mn_nm;
-      this.menu = this.selectedItem.sub_mn;
-    }
+    this.userData = userData;
+    this.title = "Order List";
+    this.foods = userData._orders;
   }
-	dismiss() {
-	  let data = { 'foo': 'bar' };
-	  this.viewCtrl.dismiss(data);
-	}
+
+  removeOrder(event,item){
+    this.userData.removeItem(item);
+  }
+
+  close() {
+    this.viewCtrl.dismiss();
+  }
+  calTotal(order){
+    let total = 0;
+    for(var i = 0; i < order.length; i++){
+        var product = order[i].food;
+        total += (product.prd_prc * order[i].quantity);
+    }
+    return total;
+  }
+  sendOrders(){
+    alert('//todo');
+  }
 }

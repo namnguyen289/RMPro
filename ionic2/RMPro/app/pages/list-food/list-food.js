@@ -1,6 +1,7 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Page, Modal, NavController, NavParams} from 'ionic-angular';
 import {ItemDetailsPage} from '../item-details/item-details';
-import {UserData} from "../../providers/user-data"
+import {OrderPopupPage} from '../../popup/order/order-popup';
+import {UserData} from "../../providers/user-data";
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
@@ -36,5 +37,9 @@ export class ListFoodPage {
   }
   removeOrder(event,item){
     this.userData.removeItem(item);
+  }
+  showModal() {
+    let modal = Modal.create(OrderPopupPage);
+    this.nav.present(modal);
   }
 }

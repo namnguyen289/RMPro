@@ -31,7 +31,7 @@ class MyApp {
     ];
 
     // make the root (or first) page
-    this.rootPage = MenuManagementPage;
+    this.rootPage = MenuPage;
   }
 
   initializeApp() {
