@@ -1,0 +1,11 @@
+{
+  "name": "RMPro",
+  "app_id": "",
+  "v2": true,
+  "proxies": [
+    {
+      "path": "/data",
+      "proxyUrl": "http://10.0.17.96:8081/"
+    }
+  ]
+}
