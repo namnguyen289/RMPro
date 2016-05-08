@@ -20,6 +20,7 @@ export class ListFoodPage {
     this.userData = userData;
     this.selectedItem = navParams.get('item');
     this.title = this.selectedItem.mn_nm;
+    this.foods = null;
 
 
     this.http.get('/data/listfood?res_id=' + 'FIRST_RES' + '&mn_id=' + this.selectedItem.mn_id).map(res => res.json()).subscribe(data => {
@@ -29,7 +30,7 @@ export class ListFoodPage {
 
   itemTapped(event, item) {
      this.nav.push(ItemDetailsPage, {
-       item: item
+       item: item,
      });
   }
   placeOrder(event,item){

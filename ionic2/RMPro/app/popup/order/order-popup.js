@@ -30,7 +30,7 @@ export class OrderPopupPage {
     let total = 0;
     for(var i = 0; i < order.length; i++){
         var product = order[i].food;
-        total += (product.prd_prc * order[i].quantity);
+        total += (product.prd_prc * (!order[i].quantity?0:order[i].quantity));
     }
     return total;
   }

@@ -19,7 +19,7 @@
         </ion-thumbnail>
         <h2>{{food.food.prd_nm}}</h2>
         <input class="quantity" type="number" [(ngModel)]="food.quantity"/>
-        <p class="total">Total: {{food.quantity*food.food.prd_prc}}</p>
+        <p class="total">Total: {{(!food.quantity?0:food.quantity)*food.food.prd_prc}}</p>
       </ion-item>
       <ion-item-options>
         <button danger (click)="removeOrder($event,food.food)">
