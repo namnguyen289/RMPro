@@ -23,7 +23,10 @@ export class MenuPage {
     }else{
       this.http.get('/data/menu?res_id=' + 'FIRST_RES').map(res => res.json()).subscribe(data => {
           this.menu = data.data;
-      });
+      },
+    err => {
+        console.log("Oops!");
+    });
     }
   }
 
