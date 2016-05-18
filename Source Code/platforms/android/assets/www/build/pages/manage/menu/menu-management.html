@@ -1,0 +1,41 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>s</ion-title>
+ <ion-buttons end>
+    <button (click) = "addMenu($event)"><ion-icon name="plus"></ion-icon>
+      Add
+    </button>
+  </ion-buttons>
+</ion-navbar>
+<ion-content>
+  <ion-list class="menu-management" no-lines> 
+    <!-- <button ion-item *ngFor="#menuitem of menu" (click)="itemTapped($event, menuitem)" style="background-image: url('{{menuitem.bg_img}}')">
+      <h2>{{menuitem.mn_nm}}</h2>
+      <P>
+        {{menuitem.mn_dsc}}
+      </P>
+    </button> -->
+   <ion-item-sliding *ngFor="#menuitem of menu" [(ngModel)]="menu">
+      <ion-item (click)="itemTapped($event, menuitem)" style="background-image: url('{{menuitem.bg_img}}')">
+        <h2>{{menuitem.mn_nm}}</h2>
+        <P class="description">
+          {{menuitem.mn_dsc}}
+        </P>
+      </ion-item>
+        
+      <ion-item-options>
+        <button primary (click)="addSubMenu($event,menuitem)">
+          Add<br/>Sub
+        </button>
+        <button primary (click)="editMenu($event,menuitem)">
+          Edit
+        </button>
+        <button danger (click)="removeMenu($event,menuitem)">
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> 
+</ion-content>
