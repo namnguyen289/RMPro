@@ -11,25 +11,16 @@
 </ion-toolbar>
 
 <ion-content>
-<!--   <ion-list class="products"  no-lines>
-    <ion-item-sliding class="product" *ngFor="#food of foods">
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="{{food.food.prd_img}}">
-        </ion-thumbnail>
-        <h2>{{food.food.prd_nm}}</h2>
-        <input class="quantity" type="number" [(ngModel)]="food.quantity"/>
-        <p class="total">Total: {{food.quantity*food.food.prd_prc}}</p>
-      </ion-item>
-      <ion-item-options>
-        <button danger (click)="removeOrder($event,food.food)">
-          Remove
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list> -->
-  <ionic-card>
-    <img [src]="image">
-  </ionic-card>
-  <button lagre round class="center" (click)="tabtopics()">camera</button>
+<div class="preview">
+    <ion-item style="background-image: url('{{menuitem.bg_img}}')" ([ngModel])="menuitem">
+      <h2>{{menuitem.mn_nm}}</h2>
+      <P class="description">
+        {{menuitem.mn_dsc}}
+      </P>
+    </ion-item>
+  </div>
+  <input type="text" ([ngModel])="menuitem.mn_nm"/>
+  <input type="text" ([ngModel])="menuitem.mn_dsc"/>
+<button lagre round class="center" (click)="tabtopics()">Select image</button>
+  <img [src]="image" *ngIf="image">
 </ion-content>

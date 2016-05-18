@@ -8751,3 +8751,29 @@ div.selection {
   width: 11vw;
   float: right;
   text-align: center; }
+
+.preview .item {
+  width: 100%;
+  height: 140px;
+  margin-bottom: 2px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 1;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: color;
+  background-repeat: no-repeat; }
+  .preview .item:last-child {
+    margin-bottom: 0; }
+  .preview .item h2 {
+    font-size: 7vw;
+    color: #FFFFFF;
+    margin-bottom: 5px; }
+  .preview .item p {
+    font-size: 4vw;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0; }
+  .preview .item .item-inner {
+    background-image: none !important;
+    border: none; }

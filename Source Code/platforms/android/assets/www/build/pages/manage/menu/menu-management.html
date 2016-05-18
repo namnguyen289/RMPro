@@ -17,7 +17,7 @@
         {{menuitem.mn_dsc}}
       </P>
     </button> -->
-   <ion-item-sliding *ngFor="#menuitem of menu" [(ngModel)]="menu">
+   <ion-item-sliding *ngFor="#menuitem of menu">
       <ion-item (click)="itemTapped($event, menuitem)" style="background-image: url('{{menuitem.bg_img}}')">
         <h2>{{menuitem.mn_nm}}</h2>
         <P class="description">
