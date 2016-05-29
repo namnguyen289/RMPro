@@ -1,0 +1,107 @@
+{
+  "data":[
+  	{
+  		"zn_cd":"Z0001",
+  		"zn_nm":"Tầng 1",
+  		"tables":[
+	  		{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber1",
+			"tbl_nm":"Bàn Số 1",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"4"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber2",
+			"tbl_nm":"Bàn Số 2",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"6"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber3",
+			"tbl_nm":"Bàn Số 3",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"AVALIBLE",
+			"tbl_cp":"4"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber4",
+			"tbl_nm":"Bàn Số 4",
+			"tbl_lvl":"GENERAL",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"4"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber5",
+			"tbl_nm":"Bàn Số 5",
+			"tbl_lvl":"GENERAL",
+			"tbl_sts":"USING",
+			"tbl_cp":"4"
+		}
+  		]
+  	},{
+  		"zn_cd":"Z0002",
+  		"zn_nm":"Tầng 2",
+  		"tables":[
+	  		{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber6",
+			"tbl_nm":"Bàn Số 6",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"4"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber7",
+			"tbl_nm":"Bàn Số 7",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"6"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber8",
+			"tbl_nm":"Bàn Số 8",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"AVALIBLE",
+			"tbl_cp":"4"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber9",
+			"tbl_nm":"Bàn Số 9",
+			"tbl_lvl":"GENERAL",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"4"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber0",
+			"tbl_nm":"Bàn Số 10",
+			"tbl_lvl":"GENERAL",
+			"tbl_sts":"USING",
+			"tbl_cp":"4"
+		}
+  		]
+  	},{
+  		"zn_cd":"Z0003",
+  		"zn_nm":"Tầng 3",
+  		"tables":[
+	  		{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber11",
+			"tbl_nm":"Bàn Số 11",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"6"
+		},{
+			"res_id":"FIRST_RES",
+			"tbl_id":"tablenumber12",
+			"tbl_nm":"Bàn Số 7",
+			"tbl_lvl":"VIP",
+			"tbl_sts":"BOOKED",
+			"tbl_cp":"6"
+		}
+  		]
+  	}	
+  ]
+}
