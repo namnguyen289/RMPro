@@ -39,6 +39,10 @@ app.get('/tables',function(req,res){
       res.sendFile(__dirname + "/data/tables.json");
 });
 
+app.get('/employee',function(req,res){
+
+    res.sendFile(__dirname + "/data/employee.json");
+});
 app.post('/api/photo',function(req,res){
 	upload(req,res,function(err) {
 		if(err) {
