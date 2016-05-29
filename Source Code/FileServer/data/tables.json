@@ -1,6 +1,7 @@
 {
   "data":[
   	{
+  		"res_id":"FIRST_RES",
   		"zn_cd":"Z0001",
   		"zn_nm":"Tầng 1",
   		"tables":[
@@ -42,6 +43,7 @@
 		}
   		]
   	},{
+  		"res_id":"FIRST_RES",
   		"zn_cd":"Z0002",
   		"zn_nm":"Tầng 2",
   		"tables":[
@@ -83,6 +85,7 @@
 		}
   		]
   	},{
+  		"res_id":"FIRST_RES",
   		"zn_cd":"Z0003",
   		"zn_nm":"Tầng 3",
   		"tables":[

@@ -34,9 +34,9 @@ app.get('/food',function(req,res){
       res.sendFile(__dirname + "/data/food.json");
 });
 
-app.get('/table',function(req,res){
+app.get('/tables',function(req,res){
 
-      res.sendFile(__dirname + "/data/table.json");
+      res.sendFile(__dirname + "/data/tables.json");
 });
 
 app.post('/api/photo',function(req,res){
