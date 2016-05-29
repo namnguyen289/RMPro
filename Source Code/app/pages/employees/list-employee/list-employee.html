@@ -1,0 +1,32 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+        <!--<button (click)="showModal()"><ion-icon name="cart"></ion-icon>-->
+            <!--{{userData._orders.length}}-->
+        <!--</button>-->
+    </ion-buttons>
+</ion-navbar>
+
+<ion-content>
+    <ion-list class="user" >
+        <ion-item-sliding *ngFor="#user of users">
+            <ion-item (click)="itemTapped($event, user)" >
+                <ion-thumbnail item-left>
+                    <img src="{{user.usr_img}}">
+                </ion-thumbnail>
+                <h2>{{user.usr_nm}}</h2>
+            </ion-item>
+            <!--<ion-item-options>-->
+                <!--<button primary (click)="placeOrder($event,food)">-->
+                    <!--Order-->
+                <!--</button>-->
+                <!--<button danger (click)="removeOrder($event,food)">-->
+                    <!--Remove-->
+                <!--</button>-->
+            <!--</ion-item-options>-->
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
