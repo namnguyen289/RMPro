@@ -37,21 +37,21 @@ export class TablePage {
             });
     }
     itemTapped(event, item) {
-        if (item.sub_mn === undefined || item.sub_mn.length == 0) {
-            this.nav.push(OrderPage, {
-                item: item
-            });
-        }
+        // if (item.sub_mn === undefined || item.sub_mn.length == 0) {
+        //     this.nav.push(OrderPage, {
+        //         item: item
+        //     });
+        // }
     }
-    filterTables(val){
-      var isMatch = false;
-      if(val.tbl_nm === undefined)isMatch = true;
-      if(val.tbl_nm != undefined && val.tbl_nm.toLowerCase().indexOf(this.query) > -1)isMatch = true;
-      return isMatch;
-    }
+    // filterTables(val){
+    //   var isMatch = false;
+    //   if(val.tbl_nm === undefined)isMatch = true;
+    //   if(val.tbl_nm != undefined && val.tbl_nm.toLowerCase().indexOf(this.query) > -1)isMatch = true;
+    //   return isMatch;
+    // }
     queryChange(searchbar){
        var q = searchbar.value;
-       this.table = Object.assign([], this.data);
+       this.table = JSON.parse(JSON.stringify(this.data));
       if (q.trim() == '') {
         return;
       }
@@ -59,8 +59,15 @@ export class TablePage {
          let zone =this.table[i];
          zone.tables = zone.tables.filter((val)=>{
           let isMatch = false;
-          if(val.tbl_nm === undefined)isMatch = true;
-          if(val.tbl_nm != undefined && val.tbl_nm.toLowerCase().indexOf(this.query) > -1)isMatch = true;
+          if(val.tbl_nm === undefined)return true;
+          if(val.tbl_nm != undefined && val.tbl_nm.toLowerCase().indexOf(this.query.toLowerCase()) > -1) return true;
+          let frstWrds = val.tbl_nm.split(' ');
+          let frstWrd = '';
+          frstWrds.forEach(function(element) {
+              frstWrd = frstWrd + '' + element.charAt(0);
+          }, this);
+          if(frstWrd.toLowerCase().indexOf(this.query.toLowerCase()) > -1) return true;
+          
           return isMatch;
          });
          this.table[i] = zone;

@@ -4,50 +4,43 @@
       "res_id":"FIRST_RES",
       "usr_id":"namnguyen",
       "rl_id":"MNG",
-      "usr_nm":"Nam Nguyen",
-      "usr_img":"/data/img/94893552491t.jpg-1461440602582.jpg"
+      "usr_nm":"Nam Nguyen"
     },
     {
       "res_id":"FIRST_RES",
       "usr_id":"cuongLe",
       "rl_id":"MNG",
-      "usr_nm":"Cuong Le",
-      "usr_img":"/data/img/94893552491t.jpg-1461440602582.jpg"
+      "usr_nm":"Cuong Le"
     },
     {
       "res_id":"FIRST_RES",
       "usr_id":"daubep1",
       "rl_id":"MNG",
-      "usr_nm":"dau bep 1",
-      "usr_img":"/data/img/94893552491t.jpg-1461440602582.jpg"
+      "usr_nm":"dau bep 1"
     },
     {
       "res_id":"FIRST_RES",
       "usr_id":"daubep2",
       "rl_id":"MNG",
-      "usr_nm":"dau bep 2",
-      "usr_img":"/data/img/94893552491t.jpg-1461440602582.jpg"
+      "usr_nm":"dau bep 2"
     },
     {
       "res_id":"FIRST_RES",
       "usr_id":"phucvu1",
       "rl_id":"MNG",
-      "usr_nm":"phuc vu 1",
-      "usr_img":"/data/img/94893552491t.jpg-1461440602582.jpg"
+      "usr_nm":"phuc vu 1"
     },
     {
       "res_id":"FIRST_RES",
       "usr_id":"phucvu2",
       "rl_id":"MNG",
-      "usr_nm":"phuc vu 2",
-      "usr_img":"/data/img/94893552491t.jpg-1461440602582.jpg"
+      "usr_nm":"phuc vu 2"
     },
     {
       "res_id":"FIRST_RES",
       "usr_id":"phucvu3",
       "rl_id":"MNG",
-      "usr_nm":"phuc vu 3",
-      "usr_img":"/data/img/94893552491t.jpg-1461440602582.jpg"
+      "usr_nm":"phuc vu 3"
     }
   ]
 }
