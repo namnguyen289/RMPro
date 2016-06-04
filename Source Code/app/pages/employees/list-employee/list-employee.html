@@ -14,9 +14,6 @@
     <ion-list class="user" >
         <ion-item-sliding *ngFor="#user of users">
             <ion-item (click)="itemTapped($event, user)" >
-                <ion-thumbnail item-left>
-                    <img src="{{user.usr_img}}">
-                </ion-thumbnail>
                 <h2>{{user.usr_nm}}</h2>
             </ion-item>
             <!--<ion-item-options>-->

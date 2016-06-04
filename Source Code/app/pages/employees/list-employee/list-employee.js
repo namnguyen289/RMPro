@@ -13,7 +13,7 @@ export class ListEmployeePage {
   	this.nav = nav;
     this.http = http;
     this.users = [];
-      this.title = 'List User';
+    this.title = 'List User';
     this.http.get('/data/employee?res_id=' + 'FIRST_RES').map(res => res.json()).subscribe(data => {
           this.users = data.data;
         },

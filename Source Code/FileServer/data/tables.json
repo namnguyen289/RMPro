@@ -17,7 +17,7 @@
 			"tbl_id":"tablenumber2",
 			"tbl_nm":"Bàn Số 2",
 			"tbl_lvl":"VIP",
-			"tbl_sts":"BOOKED",
+			"tbl_sts":"AVALIBLE",
 			"tbl_cp":"6"
 		},{
 			"res_id":"FIRST_RES",
@@ -31,7 +31,7 @@
 			"tbl_id":"tablenumber4",
 			"tbl_nm":"Bàn Số 4",
 			"tbl_lvl":"GENERAL",
-			"tbl_sts":"BOOKED",
+			"tbl_sts":"AVALIBLE",
 			"tbl_cp":"4"
 		},{
 			"res_id":"FIRST_RES",
@@ -52,14 +52,14 @@
 			"tbl_id":"tablenumber6",
 			"tbl_nm":"Bàn Số 6",
 			"tbl_lvl":"VIP",
-			"tbl_sts":"BOOKED",
+			"tbl_sts":"AVALIBLE",
 			"tbl_cp":"4"
 		},{
 			"res_id":"FIRST_RES",
 			"tbl_id":"tablenumber7",
 			"tbl_nm":"Bàn Số 7",
 			"tbl_lvl":"VIP",
-			"tbl_sts":"BOOKED",
+			"tbl_sts":"AVALIBLE",
 			"tbl_cp":"6"
 		},{
 			"res_id":"FIRST_RES",
