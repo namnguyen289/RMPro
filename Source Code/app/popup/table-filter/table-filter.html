@@ -10,14 +10,22 @@
     </ion-buttons>
 </ion-toolbar>
 <ion-content>
-    <ion-label>Pepperoni</ion-label>
-    <ion-checkbox [(ngModel)]="pepperoni" (ionChange)="updateFilter()"></ion-checkbox>
-    <ion-label>Pepperoni</ion-label>
-    <ion-checkbox [(ngModel)]="pepperoni" (ionChange)="updateFilter()"></ion-checkbox>
-    <ion-label>Pepperoni</ion-label>
-    <ion-checkbox [(ngModel)]="pepperoni" (ionChange)="updateFilter()"></ion-checkbox>
-    <ion-label>Pepperoni</ion-label>
-    <ion-checkbox [(ngModel)]="pepperoni" (ionChange)="updateFilter()"></ion-checkbox>
-    <ion-label>Pepperoni</ion-label>
-    <ion-checkbox [(ngModel)]="pepperoni" (ionChange)="updateFilter()"></ion-checkbox>
+    <ion-list>    
+        <ion-item >
+            <ion-item-divider light>Table Status</ion-item-divider>
+            <ion-item *ngFor="#tbl_sts_item of tbl_sts">
+                <ion-label>{{tbl_sts_item}}</ion-label>
+                <!-- <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox> -->
+            </ion-item>
+        </ion-item>        
+    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-33></ion-col>
+            <ion-col width-33>
+                <button full (click)="apply()">Apply</button>
+            </ion-col>
+            <ion-col width-33></ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

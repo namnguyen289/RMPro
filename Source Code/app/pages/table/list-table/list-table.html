@@ -2,8 +2,8 @@
     <button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <!--<ion-title>{{title}}</ion-title>-->
-    <ion-searchbar id="searchQuery" [(ngModel)]="query" (input)='queryChange($event)'></ion-searchbar>
+    <ion-title>{{title}}</ion-title>
+    
     <ion-buttons end>
         <button (click)="presentFilter()">
             <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
@@ -11,6 +11,7 @@
     </ion-buttons>
 </ion-navbar>
 <ion-content class="list_table">
+<ion-searchbar id="searchQuery" [(ngModel)]="query" (input)='queryChange($event)'></ion-searchbar>
     <ion-item-group *ngFor="#zoneitem of table">
         <ion-item-divider light>{{zoneitem.zn_nm}}</ion-item-divider>
         <ion-item *ngFor="#tableitem of zoneitem.tables" class="item {{tableitem.tbl_lvl}} {{tableitem.tbl_sts}}">

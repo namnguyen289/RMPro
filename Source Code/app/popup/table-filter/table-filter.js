@@ -1,39 +1,29 @@
-import {Page, ViewController} from 'ionic-angular';
-import {Http} from 'angular2/http';
-import 'rxjs/add/operator/map';
+import {Page, NavParams, ViewController} from 'ionic-angular';
 
 @Page({
-	templateUrl: 'Build/popup/order/order-popup.html'
+	templateUrl: 'Build/popup/table-filter/table-filter.html'
 })
 export class TableFilterPopupPage {
   static get parameters() {
-    return [[ViewController],[Http], [UserData]];
+    return [[ViewController],[NavParams]];
   }
 
-   constructor(viewCtrl,http,userData) {
+   constructor(viewCtrl,navParams) {
     this.viewCtrl = viewCtrl;
-    this.http = http;
-    this.userData = userData;
+    this.navParams = navParams;    
+    this.tbl_sts = this.navParams.get('tbl_sts');
     this.title = "Order List";
-    this.foods = userData._orders;
+    this.excludeOptions = this.navParams.data;
+    this.setView();
   }
-
-  removeOrder(event,item){
-    this.userData.removeItem(item);
-  }
-
   close() {
     this.viewCtrl.dismiss();
   }
-  calTotal(order){
-    let total = 0;
-    for(var i = 0; i < order.length; i++){
-        var product = order[i].food;
-        total += (product.prd_prc * (!order[i].quantity?0:order[i].quantity));
-    }
-    return total;
+  apply(){
+    this.viewCtrl.dismiss(this.excludeOptions);
   }
-  sendOrders(){
-    alert('//todo');
+  setView(){
+    this.tbl_sts = this.navParams.get('tbl_sts');
+    this.tbl_lvl = this.navParams.get('tbl_lvl');
   }
 }
