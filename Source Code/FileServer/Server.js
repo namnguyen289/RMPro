@@ -39,6 +39,11 @@ app.get('/tables',function(req,res){
       res.sendFile(__dirname + "/data/tables.json");
 });
 
+app.get('/orders',function(req,res){
+
+      res.sendFile(__dirname + "/data/orders.json");
+});
+
 app.get('/employee',function(req,res){
 
     res.sendFile(__dirname + "/data/employee.json");
