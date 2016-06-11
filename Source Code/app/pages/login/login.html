@@ -13,10 +13,10 @@
       <img src="img/appicon.svg">
     </div>
 
-    <form #loginForm="ngForm" novalidate>
+    <form #loginForm="ngForm" validate>
       <ion-item>
         <ion-label floating primary>Username</ion-label>
-        <ion-input [(ngModel)]="login.username" ngControl="username" type="text" #username="ngForm" required>
+        <ion-input [(ngModel)]="login.username" ngControl="username" type="email" #username="ngForm" required>
         </ion-input>
       </ion-item>
       <p [hidden]="username.valid || submitted == false" danger padding-left>
