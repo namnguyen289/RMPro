@@ -2,13 +2,15 @@ import 'es6-shim';
 import {App, IonicApp, Platform, MenuController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {UserData} from './providers/user-data';
+import {FirebaseService} from './providers/firebaseService';
 import {MenuPage} from './pages/list-menu/list-menu';
 import {IntroPage} from './pages/intro/intro';
 import {MenuManagementPage} from './pages/manage/menu/menu-management';
+import {TablePage} from './pages/table/list-table/list-table';
 
 @App({
   templateUrl: 'build/app.html',
-  providers: [UserData],
+  providers: [UserData,FirebaseService],
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
@@ -32,7 +34,7 @@ class MyApp {
     ];
 
     // make the root (or first) page
-    this.rootPage = IntroPage;
+    this.rootPage = TablePage;
   }
 
   initializeApp() {
