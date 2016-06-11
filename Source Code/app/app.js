@@ -7,6 +7,7 @@ import {IntroPage} from './pages/intro/intro';
 import {MenuManagementPage} from './pages/manage/menu/menu-management';
 import {ListEmployeePage} from './pages/employees/list-employee/list-employee';
 import {TablePage} from './pages/table/list-table/list-table';
+import {OrderListPage} from './pages/order/order';
 import {LoginPage} from './pages/login/login';
 import {SignupPage} from './pages/signup/signup';
 
@@ -34,7 +35,10 @@ class MyApp {
     this.pages = [
       {title: 'Intro', component: IntroPage},
       { title: 'Menu', component: MenuPage },
-      { title: 'Menu Setting', component: MenuManagementPage }
+      { title: 'Menu Setting', component: MenuManagementPage },
+      { title: 'Table', component: TablePage },
+      { title: 'Employees', component: ListEmployeePage },
+      { title: 'Order', component: OrderListPage}
     ];
 
     this.loggedInPages = [

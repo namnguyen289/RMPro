@@ -3,18 +3,11 @@
         <ion-title>Pages</ion-title>
     </ion-toolbar>
     <ion-content>
-        <ion-list>
-            <ion-list-header>
-                Navigate
-            </ion-list-header>
-            <button ion-item *ngFor="#p of pages" (click)="openPage(p)">
-                {{p.title}}
-            </button>
-        </ion-list>
-        <ion-list *ngIf="loggedIn">
-            <ion-list-header>
+        <ion-list class="loggedIn" *ngIf="loggedIn">
+            <ion-list-header class="header center">
                 Account
             </ion-list-header>
+            <div class="avatar"><img src="img/avatar.jpg"></div>
             <button ion-item menuClose *ngFor="#p of loggedInPages" (click)="openPage(p)">
                 <ion-icon item-left [name]="p.icon"></ion-icon>
                 {{p.title}}
@@ -26,6 +19,14 @@
             </ion-list-header>
             <button ion-item menuClose *ngFor="#p of loggedOutPages" (click)="openPage(p)">
                 <ion-icon item-left [name]="p.icon"></ion-icon>
+                {{p.title}}
+            </button>
+        </ion-list>
+        <ion-list>
+            <ion-list-header>
+                Navigate
+            </ion-list-header>
+            <button ion-item *ngFor="#p of pages" (click)="openPage(p)">
                 {{p.title}}
             </button>
         </ion-list>
