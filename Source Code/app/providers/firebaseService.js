@@ -1,12 +1,12 @@
 import {Injectable} from 'angular2/core';
 import 'rxjs/Rx';
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 
 
 @Injectable()
 export class FirebaseService {
 
-   
+
     constructor() {
         this.baseRef = new Firebase('https://rmpro.firebaseio.com/');
         // check for changes in auth status
@@ -16,21 +16,26 @@ export class FirebaseService {
             } else {
                 console.log("User is logged out");
             }
-        })
+        });
+    }
+
+    getbase(){
+        return this.baseRef;
     }
 
     logout() {
         this.baseRef.unauth()
     }
 
-    login(_username) {
-        var that = this
-
-        return new Observable(observer => {
+    login(_username, _password) {
+        var that = this;
+        return Observable.create(observer => {
+            console.log("Start login");
+            console.log(that.baseRef);
             that.baseRef.authWithPassword({
-                "email": _username,
-                "password": "password"
-            }, function(error, authData) {
+                email: _username,
+                password: _password
+            }, (error, authData)=>{
                 if (error) {
                     console.log("Login Failed!", error);
                     observer.error(error)
@@ -38,7 +43,79 @@ export class FirebaseService {
                     console.log("Authenticated successfully with payload-", authData);
                     observer.next(authData)
                 }
+                observer.complete();
+                console.log("End login");
             });
+        });
+    }
+
+    createUser(_username, _password) {
+        this.baseRef.createUser({
+            email: _username,
+            password: _password
+        }, function(error, userData) {
+            if (error) {
+                console.log("Error creating user:", error);
+            } else {
+                console.log("Successfully created user account with uid:", userData.uid);
+            }
+        });
+    }
+
+    changeEmail(_username, _newEmail, _password) {
+        var ref = this.baseRef;
+        ref.changeEmail({
+            oldEmail: _username,
+            newEmail: _newEmail,
+            password: _password
+        }, function(error) {
+            if (error === null) {
+                console.log("Email changed successfully");
+            } else {
+                console.log("Error changing email:", error);
+            }
+        });
+    }
+
+    changePassword(_username, _password, _newPassword) {
+        var ref = this.baseRef;
+        ref.changePassword({
+            email: _username,
+            oldPassword: _password,
+            newPassword: _newPassword
+        }, function(error) {
+            if (error === null) {
+                console.log("Password changed successfully");
+            } else {
+                console.log("Error changing password:", error);
+            }
+        });
+    }
+
+    resetPassword(_username) {
+        var ref = this.baseRef;
+        ref.resetPassword({
+            email: _username
+        }, function(error) {
+            if (error === null) {
+                console.log("Password reset email sent successfully");
+            } else {
+                console.log("Error sending password reset email:", error);
+            }
+        });
+    }
+
+    deleteUser(_username, _password) {
+        var ref = this.baseRef;
+        ref.removeUser({
+            email: _username,
+            password: _password
+        }, function(error) {
+            if (error === null) {
+                console.log("User removed successfully");
+            } else {
+                console.log("Error removing user:", error);
+            }
         });
     }
 
@@ -60,7 +137,7 @@ export class FirebaseService {
 
     getData(_id, _callback) {
         var ref = this.baseRef.child('bookItems')
-        //  ref = ref.child(_id)
+            //  ref = ref.child(_id)
 
         ref.on('value',
             (snapshot) => {
@@ -82,7 +159,7 @@ export class FirebaseService {
 
     getDataObs(_id) {
         var ref = this.baseRef.child('bookItems')
-        //  ref = ref.child(_id)
+            //  ref = ref.child(_id)
         var that = this
 
         return new Observable(observer => {
@@ -105,6 +182,41 @@ export class FirebaseService {
         });
     }
 
+    saveData(_parent, _data) {
+        var ref = this.baseRef;
+        var parentsRef = ref.child(_parent);
+        parentsRef.set(_data, function(error) {
+            if (error) {
+                alert("Data could not be saved." + error);
+            } else {
+                alert("Data saved successfully.");
+            }
+        });
+    }
+
+    updateData(_target, _data) {
+        var ref = this.baseRef;
+        var targetRef = ref.child(_target);
+        targetRef.update(_data, function(error) {
+            if (error) {
+                alert("Data could not be saved." + error);
+            } else {
+                alert("Data saved successfully.");
+            }
+        });
+    }
+
+    saveListData(_target, _listData) {
+        var ref = this.baseRef;
+        var targetRef = ref.child(_target);
+        _listData.forEach((item)=>{
+            targetRef.push().set(item);
+        });
+    }
+
+    saveTransactionalData(_target,_logic){
+        var ref = this.baseRef;
+        ref.transaction(_logic);
+    }
 
 }
-

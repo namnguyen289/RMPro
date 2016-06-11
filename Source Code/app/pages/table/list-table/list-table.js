@@ -1,6 +1,7 @@
 import { Page, NavController, NavParams, Modal } from 'ionic-angular';
 import { Http } from 'angular2/http';
 import {TableFilterPopupPage} from '../../../popup/table-filter/table-filter';
+import { FirebaseService } from '../../../providers/firebaseService';
 import 'rxjs/add/operator/map';
 
 @Page({
@@ -11,14 +12,16 @@ export class TablePage {
         return [
             [NavController],
             [NavParams],
-            [Http]
+            [Http],
+            [FirebaseService]
         ];
     }
-    constructor(nav, navParams, http) {
+    constructor(nav, navParams, http,FBService) {
         this.nav = nav;
         this.http = http;
         this.title = 'Table';
         this.data = null;
+        this.FBService = FBService;
         this.excludeOptions = {
           tbl_sts:['BOOKED','AVALIBLE','USING']
           ,tbl_lvl:['VIP','GENERAL']
@@ -36,6 +39,16 @@ export class TablePage {
     }
 
     itemTapped(event, item) {
+    }
+    ngOnDestroy() {
+        console.log('ngOnDestroy');
+    }
+
+    ngOnInit() {
+        console.log('ngOnInit');
+        // this.FBService.login("sadman289@mail.com").subscribe((data)=>{
+        //   console.log("the data", data);
+        // });
     }
 
     presentFilter(){
