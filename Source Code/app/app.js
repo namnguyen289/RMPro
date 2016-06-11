@@ -10,10 +10,11 @@ import {TablePage} from './pages/table/list-table/list-table';
 import {OrderListPage} from './pages/order/order';
 import {LoginPage} from './pages/login/login';
 import {SignupPage} from './pages/signup/signup';
+import {FirebaseService} from './providers/firebaseService';
 
 @App({
   templateUrl: 'build/app.html',
-  providers: [UserData,ConferenceData],
+  providers: [UserData,ConferenceData,FirebaseService],
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
