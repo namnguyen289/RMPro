@@ -1,46 +1,36 @@
-
 <ion-navbar *navbar>
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>Login</ion-title>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
 </ion-navbar>
-
-<ion-content>
-
-  <ion-list>
-    <div class="logo">
-      <img src="img/appicon.svg">
-    </div>
-
-    <form #loginForm="ngForm" validate>
-      <ion-item>
-        <ion-label floating primary>Username</ion-label>
-        <ion-input [(ngModel)]="login.username" ngControl="username" type="email" #username="ngForm" required>
-        </ion-input>
-      </ion-item>
-      <p [hidden]="username.valid || submitted == false" danger padding-left>
-        Username is required
-      </p>
-
-      <ion-item>
-        <ion-label floating primary>Password</ion-label>
-        <ion-input [(ngModel)]="login.password" ngControl="password" type="password" #password="ngForm" required>
-        </ion-input>
-      </ion-item>
-      <p [hidden]="password.valid || submitted == false" danger padding-left>
-        Password is required
-      </p>
-
-      <ion-row responsive-sm>
-        <ion-col>
-          <button (click)="onLogin(loginForm)" type="submit" primary block>Login</button>
-        </ion-col>
-        <ion-col>
-          <button (click)="onSignup()" light block>Signup</button>
-        </ion-col>
-      </ion-row>
-    </form>
-  </ion-list>
-
+<ion-content class="login-page" >
+    <ion-list>
+        <div class="logo">
+            <img src="img/appicon.svg">
+        </div>
+        <form [ngFormModel]="authForm" (ngSubmit)="onSubmit(authForm.value)" validate>
+            <ion-item [class.error]="!email.valid && email.touched">
+                <ion-label floating primary>Email</ion-label>
+                <ion-input [ngFormControl]="email" required></ion-input>
+            </ion-item>
+            <div *ngIf="email.hasError('required') && email.touched" class="error-box">* Username is required!</div>
+            <div *ngIf="email.hasError('checkEmailValidator') && email.touched" class="error-box">* Please input an email</div>
+            <ion-item [class.error]="!password.valid && password.touched">
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" value="" [ngFormControl]="password"></ion-input>
+            </ion-item>
+            <div *ngIf="password.hasError('required') && password.touched" class="error-box">* Password is required</div>
+            <!-- <div *ngIf="password.hasError('minlength') && password.touched" class="error-box">* Minimum password length is 8!</div> -->
+           <!--  <div *ngIf="password.hasError('checkFirstCharacterValidator') && password.touched" class="error-box">* Password cant't start with number!</div> -->
+            <ion-row responsive-sm>
+                <ion-col>
+                    <button type="submit" primary block>Login</button>
+                </ion-col>
+                <ion-col>
+                    <button (click)="onSignup()" light block>Signup</button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-list>
 </ion-content>

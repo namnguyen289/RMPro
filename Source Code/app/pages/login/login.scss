@@ -1,10 +1,31 @@
 
-.login-page .logo {
-  padding: 20px 0;
-  min-height: 100px;
-  text-align: center;
+.login-page {
+	.logo {
+	  padding: 20px 0;
+	  min-height: 100px;
+	  text-align: center;
+		img {
+		  max-width: 150px;
+		}
+	}
+	.custom-button {
+		margin-left: auto !important;
+		margin: 0.4rem 0.2rem 0.4rem 0.8rem;  
+	}
+
+	.error-box {
+		margin-top: 10px;
+		padding: 15px;
+		font-size: 11px;
+		color: white;
+		font-style: italic;
+		border:  1px solid #FF8B51;
+		border-radius: 3px;
+		background: #FFC58C;
+	}
+
+	.error .item-inner {
+	    border-bottom: 3px solid red !important;	
+	}
 }
 
-.login-page .logo img {
-  max-width: 150px;
-}
