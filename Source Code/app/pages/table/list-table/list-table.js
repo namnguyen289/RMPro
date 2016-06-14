@@ -38,11 +38,9 @@ export class TablePage {
             });
     }
     ngOnDestroy() {
-         console.log('ngOnDestroy');
      }
  
-     ngOnInit() {
-         console.log('ngOnInit');         
+     ngOnInit() {       
      }
 
     itemTapped(event, item) {

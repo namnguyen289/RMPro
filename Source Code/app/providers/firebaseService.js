@@ -1,30 +1,51 @@
-import {Injectable} from 'angular2/core';
+import { Injectable } from 'angular2/core';
 import 'rxjs/Rx';
-import {Observable} from 'rxjs/Observable';
+import { Events } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()
 export class FirebaseService {
-
-
-    constructor() {
+    static get parameters() {
+        return [
+            [Events]
+        ];
+    }
+    constructor(event) {
+        this.event = event;
         this.baseRef = new Firebase('https://rmpro.firebaseio.com/');
         // check for changes in auth status
+        this.authData = null;
         this.baseRef.onAuth((authData) => {
+            this.authData = authData;
             if (authData) {
                 console.log("User " + authData.uid + " is logged in with " + authData.provider);
+                this.HAS_LOGGED_IN = true;
             } else {
+                this.HAS_LOGGED_IN = false;
                 console.log("User is logged out");
             }
         });
     }
 
-    getbase(){
+    getbase() {
         return this.baseRef;
     }
 
+
+
+    hasLoggedIn() {
+        return Observable.create(observer => {
+            this.baseRef.onAuth((authData) => {                
+                observer.next(authData);
+                observer.complete();
+            });
+        });
+    }
+
+
     logout() {
-        this.baseRef.unauth()
+        this.baseRef.unauth();
     }
 
     login(_username, _password) {
@@ -35,12 +56,13 @@ export class FirebaseService {
             that.baseRef.authWithPassword({
                 email: _username,
                 password: _password
-            }, (error, authData)=>{
+            }, (error, authData) => {
                 if (error) {
                     console.log("Login Failed!", error);
                     observer.error(error)
                 } else {
                     console.log("Authenticated successfully with payload-", authData);
+                    this.authData = authData;
                     observer.next(authData)
                 }
                 observer.complete();
@@ -209,12 +231,12 @@ export class FirebaseService {
     saveListData(_target, _listData) {
         var ref = this.baseRef;
         var targetRef = ref.child(_target);
-        _listData.forEach((item)=>{
+        _listData.forEach((item) => {
             targetRef.push().set(item);
         });
     }
 
-    saveTransactionalData(_target,_logic){
+    saveTransactionalData(_target, _logic) {
         var ref = this.baseRef;
         ref.transaction(_logic);
     }

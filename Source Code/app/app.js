@@ -19,10 +19,10 @@ import {FirebaseService} from './providers/firebaseService';
 })
 class MyApp {
   static get parameters() {
-    return [[IonicApp],  [Events], [Platform], [MenuController], [UserData],[ConferenceData]];
+    return [[IonicApp],  [Events], [Platform], [MenuController], [UserData],[ConferenceData],[FirebaseService]];
   }
 
-  constructor(app, events, platform, menu,userData,confData) {
+  constructor(app, events, platform, menu,userData,confData,FBService) {
     // set up our app
     this.app = app;
     this.platform = platform;
@@ -30,6 +30,7 @@ class MyApp {
     this.menu = menu;
     this.loggedIn = false;
     this.userData = userData;
+    this.FBService = FBService;
     this.initializeApp();
 
     // set our app's pages
@@ -49,11 +50,11 @@ class MyApp {
     this.loggedOutPages = [
       { title: 'Login', component: LoginPage, icon: 'log-in' },
       { title: 'Signup', component: SignupPage, icon: 'person-add' }
-    ]
+    ];
 
     // decide which menu items should be hidden by current login status stored in local storage
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      this.loggedIn = (hasLoggedIn == 'true');
+    this.FBService.hasLoggedIn().subscribe((authData) => {
+      this.loggedIn = authData == null?false:true;
     });
 
     this.listenToLoginEvents();
@@ -99,7 +100,8 @@ class MyApp {
     if (page.title === 'Logout') {
       // Give the menu time to close before changing to logged out
       setTimeout(() => {
-        this.userData.logout();
+        this.FBService.logout();        
+        this.events.publish('user:logout');
       }, 1000);
     }
   }
